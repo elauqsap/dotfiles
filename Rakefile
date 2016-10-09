@@ -21,12 +21,16 @@ def replace_files
             '.gvimrc',
             '.zshrc',
             '.fonts',
+			'.tmux',
+			'.tmux.conf',
   ]
   files.each do |file|
     system "rm -rf #{ENV['HOME']}/#{file}"
   end
 
   link_file("#{CWD}/zsh/_zshrc", "#{ENV['HOME']}/.zshrc")
+  link_file("#{CWD}/tmux/_tmux.conf", "#{ENV['HOME']}/.tmux.conf")
+  link_file("#{CWD}/tmux", "#{ENV['HOME']}/.tmux")
   link_file("#{CWD}/vim/_vimrc", "#{ENV['HOME']}/.vimrc")
   link_file("#{CWD}/vim/_gvimrc", "#{ENV['HOME']}/.gvimrc")
   link_file("#{CWD}/vim", "#{ENV['HOME']}/.vim")
