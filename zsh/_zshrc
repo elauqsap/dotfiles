@@ -42,7 +42,7 @@ if [[ $OS_TYPE == "Darwin" ]];
 elif [[ $OS_TYPE == "Linux" ]];
   then
 	# Modify Path
-	export PATH=$PATH:$GOPATH/bin:
+	export PATH=$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/bin:$PATH:$GOPATH/bin
 	
 	# ZSH plugins to import for Linux
 	plugins=(git git-flow-avh httpie npm tmux ruby docker common-aliases)
