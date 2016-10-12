@@ -4,7 +4,7 @@ desc "Update dotfiles to most recent version"
 task :update do
   puts "pulling latest from repo"
   system "cd #{CWD} && git pull origin master"
-  #system "cd #{CWD} && git submodule foreach git pull origin master"
+  system "cd #{CWD} && git submodule foreach git pull origin master"
   replace_files
   setperms
 end
@@ -16,13 +16,14 @@ task :setperms do
 end
 
 def replace_files
-  files = [ '.vim',
-            '.vimrc',
-            '.gvimrc',
-            '.zshrc',
-            '.fonts',
-			'.tmux',
-			'.tmux.conf',
+  files = [
+    '.vim',
+    '.vimrc',
+    '.gvimrc',
+    '.zshrc',
+    '.fonts',
+		'.tmux',
+		'.tmux.conf',
   ]
   files.each do |file|
     system "rm -rf #{ENV['HOME']}/#{file}"

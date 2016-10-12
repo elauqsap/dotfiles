@@ -21,6 +21,9 @@ HISTCONTROL=ignoreboth
 # Location for custom ZSH settings
 ZSH_CUSTOM=$HOME/code/github.com/elauqsap/dotfiles/zsh/custom
 
+# Path to Go (PKG/BIN/SRC)
+export GOPATH=$HOME/code/go
+
 # Set ZSH Theme
 ZSH_THEME="agnoster"
 
@@ -42,7 +45,7 @@ if [[ $OS_TYPE == "Darwin" ]];
 elif [[ $OS_TYPE == "Linux" ]];
   then
 	# Modify Path
-	export PATH=$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/bin:$PATH:$GOPATH/bin
+	export PATH=/usr/local/go/bin:$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/bin:$PATH:$GOPATH/bin
 	
 	# ZSH plugins to import for Linux
 	plugins=(git git-flow-avh httpie npm tmux ruby docker common-aliases)
@@ -56,6 +59,3 @@ export LSCOLORS='gxfxcxdxbxegedabagacad'
 
 # Initialize RBENV
 eval "$(rbenv init -)"
-
-# Path to Go (PKG/BIN/SRC)
-export GOPATH=$HOME/code/go
