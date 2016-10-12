@@ -49,6 +49,6 @@
 [submodule "tmux/plugins/tmux-yank"]
   path = tmux/plugins/tmux-yank
   url = https://github.com/tmux-plugins/tmux-yank.git
-[submodule "tmux/plugins/tmux-tpm"]
-  path = tmux/plugins/tmux-tpm
-  url = https://github.com/tmux-plugins/tmux-tpm.git
+[submodule "tmux/plugins/tpm"]
+  path = tmux/plugins/tpm
+  url = https://github.com/tmux-plugins/tpm.git
