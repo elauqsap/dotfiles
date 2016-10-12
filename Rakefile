@@ -1,5 +1,14 @@
 CWD=File.expand_path(File.dirname(__FILE__))
 
+desc "Initialize dotfiles with most recent version"
+task :init do
+  puts "pulling latest from repo"
+  system "cd #{CWD} && git pull origin master"
+  system "cd #{CWD} && git submodule update --init --recursive"
+  replace_files
+  setperms
+end
+
 desc "Update dotfiles to most recent version"
 task :update do
   puts "pulling latest from repo"
