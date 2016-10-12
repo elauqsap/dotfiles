@@ -4,7 +4,7 @@ desc "Update dotfiles to most recent version"
 task :update do
   puts "pulling latest from repo"
   system "cd #{CWD} && git pull origin master"
-  system "cd #{CWD} && git submodule foreach git pull origin master"
+  system "cd #{CWD} && git submodule update --recursive"
   replace_files
   setperms
 end
