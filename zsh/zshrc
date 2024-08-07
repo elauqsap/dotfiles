@@ -6,6 +6,9 @@ export ZSH=$HOME/.oh-my-zsh
 # zstyle ':omz:update' mode auto      # update automatically without asking
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
+# Igonore commands starting with a space character
+setopt HIST_IGNORE_SPACE
+
 # Reevaluate the prompt string each time it's displaying a prompt
 setopt prompt_subst
 
