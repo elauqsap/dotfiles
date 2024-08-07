@@ -9,10 +9,10 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Reevaluate the prompt string each time it's displaying a prompt
 setopt prompt_subst
 
-# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-# autoload bashcompinit && bashcompinit
-# autoload -Uz compinit
-# compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit
+compinit
 # source <(kubectl completion zsh)
 
 # Which plugins would you like to load?
@@ -40,6 +40,11 @@ else
 fi
 
 eval "$(zoxide init zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+export FZF_COMPLETION_TRIGGER='~~'
 
 if [[ -z $TMUX ]]; then
   tmux has-session -t dotfiles 2>/dev/null
